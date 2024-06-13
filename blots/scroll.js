@@ -22,7 +22,9 @@ class Scroll extends Parchment.Scroll {
       }, {});
     }
     // Some reason fixes composition issues with character languages in Windows/Chrome, Safari
-    this.domNode.addEventListener('DOMNodeInserted', function() {});
+    const observer = new MutationObserver(function () {});
+    observer.observe(this.domNode, { childList: true });
+
     this.optimize();
     this.enable();
   }

@@ -89,7 +89,8 @@
     "test:coverage": "webpack --env.coverage --config _develop/webpack.config.js; karma start _develop/karma.config.js --reporters coverage",
     "travis": "karma start _develop/karma.config.js --reporters dots,saucelabs",
     "webdriver:start": "webdriver-manager start",
-    "webdriver:update": "webdriver-manager update"
+    "webdriver:update": "webdriver-manager update",
+    "postinstall": "cd ./node_modules/quill && npm install && npm run build"
   },
   "keywords": [
     "editor",
